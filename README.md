@@ -37,6 +37,11 @@ Promotions & holidays:
 ### 5. Visualization
 - Plotted Predicted vs Actual sales using XGBoost (first 100 samples)
 
+## Future Improvements
+- Hyperparameter tuning for better XGBoost performance
+- Incorporate lag features or rolling averages
+- Improve business insights with dollar impact analysis
+
 
 
 
