@@ -1,47 +1,44 @@
-# Retail Sales Forecasting - Walmart
+# Retail Sales Forecasting - Walmart Stores
 
-This project forecasts weekly sales for Walmart stores using regression models and time-based features.
+## Problem Statement
+Predict future weekly sales for different Walmart stores using historical data. The aim is to help the business optimize inventory and plan promotions effectively.
 
----
+## Dataset
+Sourced from Kaggle: [Walmart Store Sales Forecasting](https://www.kaggle.com/competitions/walmart-recruiting-store-sales-forecasting)
 
-## 📦 Dataset
-- **Source:** [Kaggle - Walmart Store Sales Forecasting](https://www.kaggle.com/competitions/walmart-recruiting-store-sales-forecasting)
-- **Files Used:** `train.csv`, `test.csv`, `features.csv`, `stores.csv`
+- `trainw.csv`: Historical sales data  
+- `testw.csv`: Test data for prediction  
+- `features.csv`: Includes additional features such as markdowns and temperature  
+- `stores.csv`: Store-type and size information  
 
----
+## Approach
 
-## 🔧 Feature Engineering
-- Merged: `train`, `features`, `stores`
-- Extracted:
-  - `Year`, `Month`, `Week`, `Day`, `DayOfWeek`
-  - `IsMonthStart`, `IsMonthEnd`
-- Included promotions and markdown features
+### 1. Data Preprocessing
+- Merged `train`, `test`, `features`, and `stores` on relevant keys
+- Converted `Date` to datetime format
 
----
+### 2. Feature Engineering
+Extracted additional time-based features:
+- Year, Month, Week, Day, Day of Week
+- IsMonthStart, IsMonthEnd
 
-## 📊 Models
-### Linear Regression
-- Simple baseline model
-- **RMSE:** *[e.g., 22,000]*
+Promotions & holidays:
+- Used `IsHoliday` and `MarkDown` features to model promotional impact
 
-### XGBoost
-- Handles non-linear relationships better
-- **RMSE:** *[e.g., 17,500]*
+### 3. Models Used
+- **Linear Regression**
+- **XGBoost Regressor**
 
----
+### 4. Evaluation Metric
+- RMSE (Root Mean Squared Error)
+- RMSE (Linear Regression): _reported in notebook_
+- RMSE (XGBoost): _reported in notebook_
 
-## 📉 Visualization
-- Plotted predicted vs actual sales
-- XGBoost closely follows the actual trend
+### 5. Visualization
+- Plotted Predicted vs Actual sales using XGBoost (first 100 samples)
 
----
 
-## 📈 Business Insights
-- Holidays and markdowns strongly impact sales
-- XGBoost helps capture complex seasonality
-- Feature importance can inform promotions planning
 
----
 
-## 🧠 Tools & Libraries
-- Python, Pandas, Seaborn, Scikit-learn, XGBoost, Matplotlib
+
+
